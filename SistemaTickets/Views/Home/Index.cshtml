@@ -1,0 +1,33 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+
+<style>
+
+	#usuarioPage {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#title {
+		margin-top: 2em;
+		margin-bottom: 6em;
+	}
+
+	#slider img {
+		width: 60%;
+		height: auto;
+	}
+
+	form {
+		margin: auto;
+	}
+
+</style>
+
+<div ng-controller="UsuariosController" id="usuarioPage" class="container" ng-cloak>
+
+	<ng-include src="'/App/Home/templates/_home.html'"></ng-include>
+	
+</div>

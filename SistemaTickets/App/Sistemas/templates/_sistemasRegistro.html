@@ -1,0 +1,43 @@
+﻿<style>
+    .global-container {
+        margin-top: 3%;
+        margin-left: -6%;
+        /* float: left; */
+        width: 110%;
+        height: 100%;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        -webkit-box-shadow: 3px 3px 6px #999;
+    }
+
+    form {
+        padding-top: 10px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .card-title {
+        font-weight: 300;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+</style>
+<div class="global-container">
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">CREAR UN NUEVO SISTEMA</h3>
+            <div class="card-text">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre del Sistema</label>
+                        <input type="text" ng-model="sistemaModel.nombre" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" ng-if="IsEditModesSistema == false" ng-click="CreateSistema()">Registrar Sistema</button>
+                    <button type="submit" class="btn btn-primary btn-block" ng-if="IsEditModesSistema == true" ng-click="PushChanges()">Editar registro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

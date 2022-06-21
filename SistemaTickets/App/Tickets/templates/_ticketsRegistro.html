@@ -1,0 +1,76 @@
+﻿<style>
+    .global-container {
+        margin-top: 3%;
+        margin-left: -9%;
+        /* float: left; */
+        width: 110%;
+        height: 100%;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        -webkit-box-shadow: 3px 3px 6px #999;
+    }
+
+    form {
+        padding-top: 10px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .card-title {
+        font-weight: 300;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+</style>
+    <div class="global-container">
+        <div class="card login-form">
+            <div class="card-body">
+                <h3 class="card-title text-center">Registro de Tickets</h3>
+                <div class="card-text">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Buscar Empleado</label>
+                            <!--<select class="form-select form-control" ng-model="VIEW.Newitem.NombreEmpleado" ng-change="GetAllEmpleados()">
+                                <option ng-repeat="item in listaEmpleados" ng-value="item.NombreEmpleado">{{item.NombreEmpleado}}</option>
+                            </select>-->
+                            <select class="form-select form-control" ng-model="VIEW.Newitem.NombreEmpleado">
+                                <option >Marcos Perez</option>
+                                <option >Jose Feliz</option>
+                                <option >Otto</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Titulo</label>
+                            <input type="text" class="form-control form-control-sm" ng-model="VIEW.Newitem.Titulo">
+                            <label for="exampleInputPassword1">Descripcion</label>
+                            <input type="text" class="form-control form-control-sm" ng-model="VIEW.Newitem.Descripcion">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Prioridad</label>
+                            <select class="form-select form-control" ng-model="VIEW.Newitem.Prioridad">
+                                <option value="1">Alta</option>
+                                <option value="2">Media</option>
+                                <option value="3">Baja</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Estado</label>
+                            <select class="form-select form-control" ng-model="VIEW.Newitem.Estado">
+                                <option value="1">Pediente</option>
+                                <option value="2">EnProceso</option>
+                                <option value="3">Comletado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Fecha de vencimiento</label>
+                            <input type="date" class="form-control form-control-sm" ng-model="VIEW.Newitem.FechaVencimiento">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" ng-click="SaveTicket(VIEW.Newitem)">Registrar ticket</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

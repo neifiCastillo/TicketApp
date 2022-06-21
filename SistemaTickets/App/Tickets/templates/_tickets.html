@@ -1,0 +1,80 @@
+﻿<style>
+    .global-container {
+        margin-top: -1%;
+        margin-left: -14%;
+        /* float: left; */
+        width: 117%;
+        height: 100%;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        -webkit-box-shadow: 3px 3px 6px #999;
+    }
+    
+    form {
+        padding-top: 10px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .card-title {
+        font-weight: 300;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    #btn-register {
+        font-size: 12px;
+        margin-left: 85%;
+        margin-top: 10px;
+    }
+
+
+    .login-form {
+        width: 100%;
+    }
+
+</style>
+<div class="global-container">
+   
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Listado de Tickets</h3>
+            <div class="card-text">
+                <form>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Titulo</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Empleado Asignado</th>
+                                <th scope="col">Prioridad</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha Creacion</th>
+                                <th scope="col">Fecha Vencimiento</th>
+                                <th scope="col">Eliminar</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Completado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in listadoTickets">
+                                <td>{{ item.Titulo }}</td>
+                                <td>{{ item.Descripcion }}</td>
+                                <td>{{ item.NombreEmpleado }}</td>
+                                <td>{{ item.PrioridadNombre }}</td>
+                                <td>{{ item.EstadoNombre }}</td>
+                                <td>{{fecha(item.FechaCreacion)}}</td>
+                                <td>{{fecha(item.FechaVencimiento)}}</td>
+                                <td><button type="submit" class="btn btn-danger">Eliminar</button></td>
+                                <td><button type="submit" class="btn btn-warning">Editar</button></td>
+                                <td><button type="submit" class="btn btn-primary">Completado</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

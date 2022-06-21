@@ -1,0 +1,30 @@
+﻿
+
+<div id="title">
+	<h2 class="text-center text-muted">Sistema de Tickets</h2>
+	<p class="text-center text-muted">Somos la herramienta ideal para gestionar las incidencias de tus usuarios.</p>
+</div>
+
+<div class="row">
+
+	<div id="slider" class="col-md-8">
+		<img class="img-responsive" src="../../../Assets/algardata_suporte_ilustracao_09_20.png" />
+	</div>
+	<div id="formulary" class="col-md-4">
+		<form>
+			<h4 class="text-center text-muted">Registrar Usuario</h4>
+			<p class="text-center text-muted">Empezar a usar Sistema Tickets</p>
+			<hr />
+			<div class="form-group">
+				<label class="text-muted" for="email">Usuario:</label>
+				<input type="text" ng-model="modeloUsuario.usuario" placeholder="usuario" class="form-control" id="email" required>
+			</div>
+			<div class="form-group">
+				<label class="text-muted" for="pwd">Contraseña:</label>
+				<input type="password" ng-model="modeloUsuario.password" placeholder="contraseña" class="form-control" id="pwd" required>
+			</div>
+			<button type="submit" class="btn btn-success" ng-click="RegistrarUsuario()">Guardar</button>
+		</form>
+	</div>
+
+</div>

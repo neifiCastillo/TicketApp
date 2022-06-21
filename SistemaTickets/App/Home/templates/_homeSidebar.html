@@ -1,0 +1,146 @@
+﻿
+<style>
+    .wrapper .sidebar {
+        background: rgb(59 126 65);
+        position: fixed;
+        top: 0px;
+        left: -39px;
+        width: 260px;
+/*        height: 100%;*/
+        padding: 53px 0px;
+        transition: all 0.5s ease;
+        z-index: 1;
+        min-height: 100vh;
+        height: auto;
+    }
+
+        .wrapper .sidebar ul li {
+            list-style: none;
+        }
+
+            .wrapper .sidebar ul li a {
+                display: block;
+                padding: 10px 15px;
+                border-bottom: 1px solid #10558d;
+                color: rgb(241, 237, 237);
+                font-size: 18px;
+                position: relative;
+                /* border: none; */
+                border-color: white;
+                text-decoration: none;
+            }
+
+                .wrapper .sidebar ul li a .icon {
+                    color: #dee4ec;
+                    width: 30px;
+                    display: inline-block;
+                }
+
+                .wrapper .sidebar ul li a:hover,
+                .wrapper .sidebar ul li a.active {
+                    color: rgb(59 126 65);
+                    background: #e7e0e0;
+                    border-right: 2px solid rgb(5, 68, 104);
+                }
+
+                    .wrapper .sidebar ul li a:hover .icon,
+                    .wrapper .sidebar ul li a.active .icon {
+                        color: rgb(59 126 65);
+                    }
+
+                    .wrapper .sidebar ul li a:hover:before,
+                    .wrapper .sidebar ul li a.active:before {
+                        display: block;
+                    }
+    #btn-register {
+        font-size: 12px;
+        margin-left: 85%;
+        margin-top: 10px;
+    }
+
+                    /*#main {
+                        min-height: 75vh;
+                        height: auto;
+                    }*/
+</style>
+
+<div id="main" class="container-fluid">
+
+    <div class="row">
+
+            <div class="col-md-3">
+                <div class="wrapper">
+                    <div class="sidebar">
+                        <ul>
+                            <li>
+                                <a href="#menu0" class="active" data-toggle="pill">
+                                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                                    <span class="item">Tickes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#menu1" data-toggle="pill">
+                                    <span class="icon"><i class="fas fa-desktop"></i></span>
+                                    <span class="item">Sistemas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#menu2" data-toggle="pill">
+                                    <span class="icon"><i class="fas fa-user-friends"></i></span>
+                                    <span class="item">Empleados</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-9 tab-content">
+                <div id="menu0" class="tab-pane fade in active">
+
+                    <div ng-controller="TicketsControlle" ng-cloak>
+                        <button type="submit" class="btn btn-success" id="btn-register" ng-click="toggleCreateMode()">
+                            {{ createMode ? 'Regresar a listado' :  'Registrar nuevo ticket' }}
+                        </button>
+                        <ng-include ng-if="!createMode" src="'/App/Tickets/templates/_tickets.html'"></ng-include>
+                        <div ng-if="createMode">
+                            <ng-include src="'/App/Tickets/templates/_ticketsRegistro.html'"></ng-include>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="menu1" class="tab-pane fade">
+                    <div ng-controller="SistemasController" ng-cloak>
+                        <button type="submit" class="btn btn-success" id="btn-register" ng-click="toggleCreateMode()">
+                            {{ createMode ? 'Regresar a listado' :  'Registrar nuevo sistema' }}
+                        </button>
+                        <ng-include ng-if="!createModeSistema" src="'/App/Sistemas/templates/_sistemas.html'"></ng-include>
+                        <div ng-if="createModeSistema">
+                            <ng-include src="'/App/Sistemas/templates/_sistemasRegistro.html'"></ng-include>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="menu2" class="tab-pane fade">
+                    <div ng-controller="EmpleadosController" ng-cloak>
+                        <button type="submit" class="btn btn-success" id="btn-register" ng-click="toggleCreateMode()">
+                            {{ createMode ? 'Regresar a listado' :  'Registrar nuevo empleado' }}
+                        </button>
+                        <ng-include ng-if="!createModeEmpleado" src="'/App/Empleados/templates/_empleados.html'"></ng-include>
+                        <div ng-if="createModeEmpleado">
+                            <ng-include src="'/App/Empleados/templates/_empleadosRegistro.html'"></ng-include>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>     
+
+        
+
+
+</div>
+
+  
