@@ -13,9 +13,9 @@ namespace SistemaTickets.Models
 		public byte[] PasswordHash { get; set; }
 		public Roles Rol { get; set; }
 
-		//public int SistemaId { get; set; }
-		//public Sistema Sistema { get; set; }
-	}
+        public int SistemaId { get; set; }
+        public Sistema Sistema { get; set; }
+    }
 
 	public enum Roles
 	{
